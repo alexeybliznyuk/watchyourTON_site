@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Offer - WatchyourTON</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="logo">WatchyourTON</div>
+        <div class="nav-buttons">
+            <button class="nav-button">Home</button>
+            <button class="nav-button">Market</button>
+            <button class="nav-button">Profile</button>
+        </div>
+    </nav>
+
+    <main class="create-offer-container">
+        <h1 class="create-title">Create New Offer</h1>
+        
+        <form class="offer-form">
+            <div class="form-section image-upload">
+                <label class="form-label">Item Image</label>
+                <div class="image-upload-container">
+                    <input type="file" id="itemImage" accept="image/*" class="image-input">
+                    <label for="itemImage" class="upload-label">
+                        <span class="upload-text">Click to upload image</span>
+                        <img id="imagePreview" class="image-preview" alt="Image preview">
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-section">
+                    <label class="form-label">Item Name</label>
+                    <input type="text" class="form-input" required>
+                </div>
+
+                <div class="form-section">
+                    <label class="form-label">Model</label>
+                    <input type="text" class="form-input" required>
+                </div>
+
+                <div class="form-section">
+                    <label class="form-label">Background Color</label>
+                    <input type="text" class="form-input" required>
+                </div>
+
+                <div class="form-section">
+                    <label class="form-label">Symbol</label>
+                    <input type="text" class="form-input" placeholder="⚡⏳✨">
+                </div>
+
+                <div class="form-section">
+                    <label class="form-label">Price (TON)</label>
+                    <input type="number" class="form-input" step="0.01" required>
+                </div>
+
+                <div class="form-section">
+                    <label class="form-label">Contact Info</label>
+                    <input type="text" class="form-input" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <label class="form-label">Description</label>
+                <textarea class="form-textarea" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="cta-button">Publish Offer</button>
+        </form>
+    </main>
+
+    <script>
+        // Image preview functionality
+        const imageInput = document.getElementById('itemImage');
+        const imagePreview = document.getElementById('imagePreview');
+
+        imageInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
