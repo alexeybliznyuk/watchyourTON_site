@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template, request
+from flask import render_template, request, session
 from routes.login import login_bp
 from flask_login import LoginManager
 
@@ -33,6 +33,15 @@ def sell():
 
 @app.route('/reg')
 def reg():
+    return render_template("reg.html")
+
+@app.route('/reg', methods=["POST"])
+def reg_submit():
+    email = request.form["email"]
+    username = request.form["username"]
+    password = request.form["email"]
+    
+    print(email, username, password)
     return render_template("reg.html")
 
 # @app.route('/login')
