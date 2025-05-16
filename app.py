@@ -42,6 +42,9 @@ def item(id):
 
 
 
+@app.route('/profile')
+def profile_red():
+    return render_template("login.html")
 # @app.route('/sell')
 # def sell():
 #     return render_template("sell.html")
