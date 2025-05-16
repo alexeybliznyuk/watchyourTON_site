@@ -24,9 +24,12 @@ def market():
     return render_template("market.html", items=all_items)
 
 
-@app.route('/user')
-def user():
-    return render_template("user.html")
+@app.route('/user/<login>')
+def user(login):
+    if dbb.get_password(login) != None:
+        return render_template("user.html", login=login)
+    else:
+        return "No such user"
 
 # @app.route('/item')
 # def item():
