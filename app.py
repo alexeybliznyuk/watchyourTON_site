@@ -3,12 +3,14 @@ from flask import render_template, request, session
 from routes.login import login_bp
 from flask_login import LoginManager
 from database.db import db_work
+from flask_restful import Resource, Api
+
 
 app = Flask(__name__)
 # login_manager = LoginManager()
 # login_manager.init_app(app)
 dbb = db_work("users.db")
-
+api = Api(app)
 
 
 
@@ -121,6 +123,15 @@ def login_submit():
 
 
 # app.register_blueprint(login_bp)
+
+
+class HelloWorld(Resource):
+    def get(self):
+        print(1)
+        return {'hello': 'world'}
+
+api.add_resource(HelloWorld, '/api/test')
+
 
 
 if __name__ == '__main__':
