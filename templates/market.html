@@ -19,248 +19,29 @@
     <main class="offers-container">
         <div class="search-bar">
             <input type="text" placeholder="Search NFTs..." class="search-input">
-            <button class="search-button">Search</button>
-            <button class="sell-button">Sell</button>
+            <!-- <button class="search-button">Search</button> -->
+            <a href="/sell"><button class="sell-button">Sell</button></a>
         </div>
 
         <div class="offers-grid" id="offersList">
             <!-- NFT Offers will be loaded here -->
+            {% for item in items %}
+            <a href="/item/{{ item[0] }}">
             <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
+                <!-- <img src="{{ item.image_url }}" alt="NFT Offer" class="offer-image"> -->
                 <div class="offer-details">
-                    <h3 class="offer-title">Vintage Chrono X</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
+                   <h3 class="offer-title">{{ item[1] }}</h3>
+                  <p class="offer-price">{{ item[5] }} TON</p>
+                  
+                   <!-- <p class="offer-description">{{ item.description }}</p> -->
+                  <div class="offer-meta">
+                       <span class="offer-seller">{{ item[6] }}</span>
+                      <span class="offer-date">{{ item.date_created }}</span>
             </div>
-
-            <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
-                <div class="offer-details">
-                    <h3 class="offer-title">Vintage Chrono X</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
-                <div class="offer-details">
-                    <h3 class="offer-title">Vintage Chrono X</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
-                <div class="offer-details">
-                    <h3 class="offer-title">Vintage Chrono X</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
-                <div class="offer-details">
-                    <h3 class="offer-title">Vintage Chrono X</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
-                <div class="offer-details">
-                    <h3 class="offer-title">Vintage Chrono X</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
-                <div class="offer-details">
-                    <h3 class="offer-title">Vintage Chrono X</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
-                <div class="offer-details">
-                    <h3 class="offer-title">Vintage Chrono X</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
-                <div class="offer-details">
-                    <h3 class="offer-title">Vintage Chrono X</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
-                <div class="offer-details">
-                    <h3 class="offer-title">Vintage Chrono X</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
-                <div class="offer-details">
-                    <h3 class="offer-title">Vintage Chrono X</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
-                <div class="offer-details">
-                    <h3 class="offer-title">Vintage Chrono X</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
-                <div class="offer-details">
-                    <h3 class="offer-title">Vintage Chrono X</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
-                <div class="offer-details">
-                    <h3 class="offer-title">Vintage Chrono X</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
-                <div class="offer-details">
-                    <h3 class="offer-title">Vintage Chrono X</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
-                <div class="offer-details">
-                    <h3 class="offer-title">Vintage Chrono X</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
-                <div class="offer-details">
-                    <h3 class="offer-title">Vintage Chrono X</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="offer-card">
-                <img src="offer1.jpg" alt="NFT Offer" class="offer-image">
-                <div class="offer-details">
-                    <h3 class="offer-title">Fagoo</h3>
-                    <p class="offer-price">1,200 TON</p>
-                    <p class="offer-description">Limited edition 1960s-inspired digital timepiece</p>
-                    <div class="offer-meta">
-                        <span class="offer-seller">@TimeTrader</span>
-                        <span class="offer-date">2h ago</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Repeat more offer cards -->
-            <!-- Add 10-15 offer-card elements with different content -->
+               </div>
+          </div>
+            </a>
+           {% endfor %}
         </div>
 
         <div class="pagination">

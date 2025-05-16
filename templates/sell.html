@@ -19,8 +19,8 @@
     <main class="create-offer-container">
         <h1 class="create-title">Create New Offer</h1>
         
-        <form class="offer-form">
-            <div class="form-section image-upload">
+        <form class="offer-form" method="POST" action="/sell">
+        <!--    <div class="form-section image-upload">
                 <label class="form-label">Item Image</label>
                 <div class="image-upload-container">
                     <input type="file" id="itemImage" accept="image/*" class="image-input">
@@ -29,50 +29,50 @@
                         <img id="imagePreview" class="image-preview" alt="Image preview">
                     </label>
                 </div>
-            </div>
+            </div> -->
 
             <div class="form-grid">
                 <div class="form-section">
                     <label class="form-label">Item Name</label>
-                    <input type="text" class="form-input" required>
+                    <input type="text" class="form-input" name="item_name" required>
                 </div>
 
                 <div class="form-section">
                     <label class="form-label">Model</label>
-                    <input type="text" class="form-input" required>
+                    <input type="text" class="form-input" name="item_model" required>
                 </div>
 
                 <div class="form-section">
                     <label class="form-label">Background Color</label>
-                    <input type="text" class="form-input" required>
+                    <input type="text" class="form-input" name="item_background" required>
                 </div>
 
                 <div class="form-section">
                     <label class="form-label">Symbol</label>
-                    <input type="text" class="form-input" placeholder="⚡⏳✨">
+                    <input type="text" class="form-input" name="item_symbol" placeholder="⚡⏳✨">
                 </div>
 
                 <div class="form-section">
                     <label class="form-label">Price (TON)</label>
-                    <input type="number" class="form-input" step="0.01" required>
+                    <input type="number" class="form-input" step="0.01" name="item_price" required>
                 </div>
 
                 <div class="form-section">
                     <label class="form-label">Contact Info</label>
-                    <input type="text" class="form-input" required>
+                    <input type="text" class="form-input" name="item_contact_info" required>
                 </div>
             </div>
 
             <div class="form-section">
                 <label class="form-label">Description</label>
-                <textarea class="form-textarea" rows="5" required></textarea>
+                <textarea class="form-textarea" rows="5"  name="item_description" required></textarea>
             </div>
 
             <button type="submit" class="cta-button">Publish Offer</button>
         </form>
     </main>
 
-    <script>
+    <!-- <script>
         // Image preview functionality
         const imageInput = document.getElementById('itemImage');
         const imagePreview = document.getElementById('imagePreview');
@@ -88,6 +88,6 @@
                 reader.readAsDataURL(file);
             }
         });
-    </script>
+    </script> -->
 </body>
 </html>
