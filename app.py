@@ -120,17 +120,29 @@ def login_submit():
 # @app.route("/login", methods=["POST"])
 # def load_user():
 
+class ItemAPI(Resource):
+    def get(self, id):
+        item_info = dbb.get_item(id)
+        if item_info:
+            return {
+                'id': item_info[0],
+                'name': item_info[1],
+                'model': item_info[2],
+                'background': item_info[3],
+                'symbol': item_info[4],
+                'price': item_info[5],
+                'contact_info': item_info[6],
+                'description': item_info[7]
+            }
+        else:
+            return {'error': 'Item not found'}, 404
 
+# Add the API resource to the endpoint /api/item/<int:id>
+api.add_resource(ItemAPI, '/api/item/<int:id>')
 
 # app.register_blueprint(login_bp)
 
 
-class HelloWorld(Resource):
-    def get(self):
-        print(1)
-        return {'hello': 'world'}
-
-api.add_resource(HelloWorld, '/api/test')
 
 
 
