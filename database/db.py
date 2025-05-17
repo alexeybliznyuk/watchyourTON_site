@@ -1,7 +1,6 @@
 import sqlite3
 
 
-
 db_name = "users.db"
 
 
@@ -18,7 +17,7 @@ class db_work:
 
         quers = []
         query = curs.execute(query_str)
-    
+
         for row in query:
             quers.append(list(row))
 
@@ -27,20 +26,19 @@ class db_work:
             return quers[0][0]
         else:
             return None
-    
+
     def registrate_user(self, login, password):
 
         conn = sqlite3.connect(self.db_file_name)
 
         curs = conn.cursor()
 
-        query_str = f"""INSERT INTO userss(login, password) VALUES("{login}", "{password}") ;"""
+        query_str = (
+            f"""INSERT INTO userss(login, password) VALUES("{login}", "{password}") ;"""
+        )
 
         query = curs.execute(query_str)
 
-        # for row in query:
-        #     print(row)
-        # print("added")
         conn.commit()
         conn.close()
 
@@ -53,7 +51,7 @@ class db_work:
 
         quers = []
         query = curs.execute(query_str)
-    
+
         for row in query:
             quers.append(list(row))
 
@@ -69,15 +67,23 @@ class db_work:
 
         quers = []
         query = curs.execute(query_str)
-    
+
         for row in query:
             quers.append(list(row))
 
         conn.close()
         return quers
 
-
-    def add_item(self, item_name, item_model, item_background, item_symbol, item_price, item_contact_info, item_description):
+    def add_item(
+        self,
+        item_name,
+        item_model,
+        item_background,
+        item_symbol,
+        item_price,
+        item_contact_info,
+        item_description,
+    ):
 
         conn = sqlite3.connect(self.db_file_name)
 
@@ -87,9 +93,6 @@ class db_work:
 
         query = curs.execute(query_str)
 
-        # for row in query:
-        #     print(row)
-        # print("added")
         conn.commit()
         conn.close()
 
@@ -104,13 +107,11 @@ if __name__ == "__main__":
     # testdb.registrate_user("ultra", "faggot")
 
 
-
 # CREATE TABLE userss (
 #     id       INTEGER PRIMARY KEY AUTOINCREMENT,
 #     login    TEXT    UNIQUE,
 #     password TEXT
 # );
-
 
 
 # CREATE TABLE items (

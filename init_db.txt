@@ -1,0 +1,19 @@
+
+CREATE TABLE userss (
+    id       INTEGER PRIMARY KEY AUTOINCREMENT,
+    login    TEXT    UNIQUE,
+    password TEXT
+);
+
+
+
+CREATE TABLE items (
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    name         TEXT,
+    model        TEXT,
+    background   TEXT,
+    symbol       TEXT,
+    price        TEXT,
+    contact_info TEXT,
+    description  TEXT
+);
